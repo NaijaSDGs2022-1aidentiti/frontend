@@ -4,6 +4,12 @@
 .theme-color {
   color: #33cccc;
 }
+.footer-theme {
+  background-color: #eafafa;
+}
+.footer-card {
+  background-color: #eafafa;
+}
 .fs-2 {
   font-size: 20px;
   line-height: 30px;
@@ -44,6 +50,17 @@
   animation-duration: 1s;
   animation-timing-function: steps(1, end);
 }
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
 @keyframes enterprise {
   0%,
   25%,
@@ -54,7 +71,7 @@
   }
   80%,
   95% {
-    width: 500px;
+    width: 19.5rem;
   }
 }
 @keyframes globalstart {
@@ -67,7 +84,7 @@
   }
   55%,
   70% {
-    width: 400px;
+    width: 26rem;
   }
 }
 @keyframes emerging {
@@ -80,7 +97,7 @@
   }
   30%,
   45% {
-    width: 500px;
+    width: 31rem;
   }
 }
 @keyframes ecommerce {
@@ -93,7 +110,7 @@
   }
   5%,
   20% {
-    width: 360px
+    width: 22rem
   }
 }
 @keyframes caret {
