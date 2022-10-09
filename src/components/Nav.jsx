@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+    const navigate = useNavigate()
     return (
         <div>
             <nav className='navbar navbar-inverse navbar-expand-sm theme-bg text-white'>
@@ -10,10 +12,10 @@ const Nav = () => {
                 <div className='collapse navbar-collapse justify-content-end animate__animated animate__fadeInRight animate__slower py-2'>
                     <ul className='navbar-nav'>
                         <li className='nav-item'>
-                            <button className='btn btn-light text-danger btn-lg font-weight-bold mx-1'>Get Started</button>
+                            <button className='btn btn-light text-danger font-weight-bold mx-1'>Get Started</button>
                         </li>
                         <li className='nav-item my-1 mx-2'>
-                            <button className='btn btn-outline-light btn-lg mx-1'>Sign in</button>
+                            <button className='btn btn-outline-light mx-1' onClick={()=>navigate('/login')} >Sign in</button>
                         </li>
                     </ul>
                 </div>
