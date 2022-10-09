@@ -6,7 +6,7 @@ const ThirdSection = () => {
             <div className='container'>
                 <p className='text-center h1 theme-color'>Our 1aidentiti solution powers multi-currency accounts, FX, payins and payout integration</p>
                 <div className='row w-100 mx-auto my-5'>
-                    <div className='col-md-4'>
+                    <div className='col-md-4 my-1'>
                         <div className='card'>
                             <p className='card-header h6 text-muted'>
                                 Payins
@@ -19,7 +19,7 @@ const ThirdSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-4'>
+                    <div className='col-md-4 my-1'>
                         <div className='card'>
                             <p className='card-header h6 text-muted'>
                                 Payout
@@ -32,7 +32,7 @@ const ThirdSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-4'>
+                    <div className='col-md-4 my-1'>
                         <div className='card'>
                             <p className='card-header h6 text-muted'>
                                 Onboarding

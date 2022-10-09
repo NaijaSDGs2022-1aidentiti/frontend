@@ -12,7 +12,7 @@ const SubHeader = () => {
                         <p className='h1 theme-color'>
                             limitless possibilities
                         </p>
-                        <p className='text-muted fs-2'>
+                        <p className='text-muted small'>
                         Run your business with everything you need to scale globally. 1aidentiti solution power payments for import & export, e-commerce, marketplaces, SMEs and large corporates.
                         </p>
                     </div>
