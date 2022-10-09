@@ -10,9 +10,16 @@
 .footer-card {
   background-color: #eafafa;
 }
+.banner {
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+}
 .fs-2 {
   font-size: 20px;
   line-height: 30px;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .e-commerce {
   animation: ecommerce;
