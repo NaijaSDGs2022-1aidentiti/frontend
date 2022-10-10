@@ -18,6 +18,11 @@
   font-size: 20px;
   line-height: 30px;
 }
+.box-position {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
 .cursor-pointer {
   cursor: pointer;
 }
