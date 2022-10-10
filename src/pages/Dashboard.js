@@ -13,14 +13,14 @@ const Dashboard = () => {
             </div>
             <div className='dashboard-theme'>
                 <div className='container'>
-                    <div className='d-flex justify-content-between'>
+                    <div className='d-flex flex-md-row flex-column justify-content-between'>
                         <p className='h6 py-3'><span className='text-primary'>Wallets</span> / <span className='text-muted'>edit wallet (INV-2020-010)</span></p>
                         <button className='my-3 btn btn-light text-primary'>Manage Wallet <i className='fa fa-caret-down'></i></button>
                     </div>
                     <div className='row w-100 mx-0'>
-                        <div className='col-8'>
+                        <div className='col-md-8 mb-2'>
                             <div className='bg-white p-3 rounded-lg'>
-                                <div className='d-flex justify-content-between'>
+                                <div className='d-flex flex-md-row flex-column justify-content-between'>
                                     <div className='d-flex'>
                                         <img alt='user_photo' src={require('../assets/images.jpg')} width='50px' height='50px' className='rounded-circle' />
                                         <div className='ml-3'>
@@ -91,7 +91,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-4'>
+                        <div className='col-md-4 mb-2'>
                             <div className='bg-white rounded-lg p-3'>
                                 <div className='form-group col'>
                                     <select className='form-control'>
