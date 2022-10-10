@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Authenticate from './components/Authenticate';
+import NotFound from './pages/404';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Otp from './pages/Otp';
@@ -19,6 +20,7 @@ function App() {
           <Route path='/auth/otp' element={<Otp />} />
           <Route path='/auth/verify-reg' element={<Verify />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   );
