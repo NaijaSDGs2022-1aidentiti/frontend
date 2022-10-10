@@ -15,7 +15,7 @@ const Nav = () => {
                             <button className='btn btn-light text-danger font-weight-bold mx-1'>Get Started</button>
                         </li>
                         <li className='nav-item my-1 mx-2'>
-                            <button className='btn btn-outline-light mx-1' onClick={()=>navigate('/login')} >Sign in</button>
+                            <button className='btn btn-outline-light mx-1' onClick={()=>navigate('/auth/login')} >Sign in</button>
                         </li>
                     </ul>
                 </div>
