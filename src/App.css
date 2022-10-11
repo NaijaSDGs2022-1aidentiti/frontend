@@ -14,24 +14,30 @@
   border-bottom-left-radius: 15%;
   border-bottom-right-radius: 15%;
 }
+.fs-8 {
+  font-size: 75%;
+}
+.fs-9 {
+  font-size: 85%;
+}
 .dashboard-theme {
   background-color: #f2f2f2;
   min-height: 100vh;
 }
 .bg-cashflakes {
-  background-color: #0066cc;
+  background-color: #0000b3;
 }
 .border-cashflakes {
-  border-color: #0066cc !important;
-  color: #0066cc !important;
+  border-color: #0000b3 !important;
+  color: #0000b3 !important;
 }
 .btn-cashflakes {
-  background-color: #0066cc;
-  border-color: #0066cc;
+  background-color: #0000b3;
+  border-color: #0000b3;
   color: #fff !important;
 }
 .text-cashflakes {
-  color: #0066cc
+  color: #0000b3
 }
 .fs-2 {
   font-size: 20px;
