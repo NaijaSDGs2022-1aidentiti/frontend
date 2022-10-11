@@ -27,16 +27,16 @@ const Dashboard = () => {
                 <div className='collapse navbar-collapse' id='collapsibleNavbar'>
                     <ul className='navbar-nav mx-md-5 pt-md-2'>
                         <li className='nav-item mx-2'>
-                            <span className='nav-link text-dark fs-8 font-weight-bold'> <i className='fa fa-tachometer'></i> Dashboard</span>
+                            <span className='nav-link text-dark fs-8 font-weight-bolder'> <i className='fa fa-objects-column'></i> Dashboard</span>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bold')}> <i className='fa fa-credit-card'></i> Wallets</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-credit-card'></i> Wallets</NavLink>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/activity' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bold')}> <i className='fa fa-signal'></i> Activity</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/activity' className={({isActive})=>( isActive ? 'nav-link text-nav-cashflakes fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-signal'></i> Activity</NavLink>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/help' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bold')}> <i className='fa fa-phone'></i> Help</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/help' className={({isActive})=>( isActive ? 'nav-link text-nav-cashflakes fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-phone'></i> Help</NavLink>
                         </li>
                     </ul>  
                     <button onClick={logout} className='d-block d-md-none btn btn-dark'>Logout</button>                  
@@ -50,9 +50,9 @@ const Dashboard = () => {
             </nav>
             <div className='dashboard-theme'>
                 <div className='px-5'>
-                    <div className='d-flex flex-md-row flex-column justify-content-between'>
-                        <p className='py-3'><span className='text-cashflakes fs-9'>Wallets</span> / <span className='text-muted fs-9'>edit wallet (INV-2020-010)</span></p>
-                        <button className='my-3 btn btn-light text-primary fs-8'>Manage Wallet <i className='fa fa-caret-down'></i></button>
+                    <div className='d-flex flex-md-row flex-column justify-content-between mx-4'>
+                        <p className='py-3'><span className='text-cashflakes fs-9 font-weight-bolder'>Wallets</span> / <span className='text-muted fs-9 font-weight-bolder'>edit wallet (INV-2020-010)</span></p>
+                        <button className='my-3 btn btn-light text-cashflakes fs-8'>Manage Wallet <i className='fa fa-caret-down'></i></button>
                     </div>
                     <div className='row w-100 mx-0'>
                         <div className='col-md-8 mb-2'>
@@ -71,7 +71,7 @@ const Dashboard = () => {
                                         <p className='text-muted fs-9'>East Java, Indonesia</p>
                                     </div>
                                 </div>
-                                <div className='mx-1 bill-board p-3 rounded-lg'>
+                                <div className='mx-1 bill-board p-3 rounded'>
                                     <div className='d-flex justify-content-between'>
                                         <div>
                                             <p className='text-white fs-9 h6'>Wallet Number</p>
@@ -161,7 +161,7 @@ const Dashboard = () => {
                                 </div>
                                 <button className='btn btn-cashflakes btn-block'>Make Payment</button>
                             </div>
-                            <div className='bg-white rounded-lg p-3 my-2'>
+                            <div className='bg-white rounded-lg p-3 my-4'>
                                 <img  alt='qrcode' src={require('../assets/qr.jpg')} className='img-fluid' />
                                 <img  alt='qrcode' src={require('../assets/qr.jpg')} className='img-fluid' />
                             </div>
