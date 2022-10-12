@@ -30,12 +30,19 @@ const Otp = () => {
             values.id = user.id
             console.log(values)
             setIsLoading(true)
-            axios.post(`${api}auth/verify_signup`, values).then(res=>{
+            axios.put(`${api}auth/verify_signup`, values).then(res=>{
                 setIsLoading(false)
                 console.log(res.data)
+                if(res.data.statusCode === 200){
+                    sessionStorage.removeItem('validating')
+                    alert('Account Verified')
+                    navigate('/auth/login')
+                }else{
+                    setError(res.data.error)
+                }
             }).catch(err=>{
                 setIsLoading(false)
-                console.log(err)
+                setError('Internal Server Error')
             })
         }
     })
@@ -50,6 +57,15 @@ const Otp = () => {
                     <p className='fs-8 font-weight-bold cashflakes-muted'>A 6-digits pin has just been sent to your registered email address.</p>
                     <div className='d-flex justify-content-center pt-5 mt-2'>
                         <form onSubmit={formik.handleSubmit}>
+                            {
+                                error !== '' && !isLoading
+                                ?
+                                <div className='alert alert-danger'>
+                                    <span className='text-capitalize'><strong><i className='fa fa-exclamation-triangle'></i></strong> {error}</span>
+                                </div>
+                                :
+                                ''
+                            }
                         <p className='text-center fs-9'>Enter your 6-digits OTP</p>
                             <div className="form-group col-12">
                                 <input className='form-control mx-2 font-weight-bold text-center' maxLength='6' onChange={formik.handleChange} onBlur={formik.handleBlur} name='otp' />
