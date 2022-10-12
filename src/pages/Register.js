@@ -25,7 +25,7 @@ const Register = () => {
         },
         validationSchema: Yup.object({
             email: Yup.string().required('This field is required').email('Enter a valid E-mail'),
-            phrase: Yup.string().required('Phrase is required'),
+            phrase: Yup.string().required('Phrase is required').matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Phrase must be alphanumeric'),
             confirm_phrase: Yup.string().required('Confirm your Phrase')
         }),
         onSubmit: (values)=>{
