@@ -1,9 +1,14 @@
+import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup'
 
 const Register = () => {
+    const api = useSelector(state=>state.url)
+    const [error, setError] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
@@ -24,7 +29,21 @@ const Register = () => {
             confirm_phrase: Yup.string().required('Confirm your Phrase')
         }),
         onSubmit: (values)=>{
-            console.log(values)
+            setIsLoading(true)
+            axios.post(`${api}auth/register`, values).then((res)=>{
+                console.log(res.data)
+                if(res.data[0]){
+                    sessionStorage.setItem('validating', JSON.stringify({id: res.data[1]._id, otp: res.data[1].otp}))
+                    navigate('/auth/otp')
+                }else{
+                    setIsLoading(false)
+                    setError(res.data[1])
+                }
+            }).catch((err)=>{
+                console.log(err)
+                setIsLoading(false)
+                setError('Internal Server Error')
+            })
         }
     })
     return (
@@ -35,6 +54,13 @@ const Register = () => {
                 </div>
                 <p className='h4 px-md-5 py-4'>Register</p>
                 <form className='px-0 px-md-5' onSubmit={formik.handleSubmit}>
+                    {
+                        error !== '' && !isLoading
+                        &&
+                        <div className='alert alert-danger'>
+                            <span><strong><i className='fa fa-exclamation-triangle'></i></strong> {error} </span>
+                        </div>
+                    }
                     <div className='form-group'>
                         <input className='form-control' placeholder='Email' name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} /> 
                         {formik.touched.email && <div className='text-danger'>{formik.errors.email}</div>} 
@@ -47,7 +73,15 @@ const Register = () => {
                         <input className='form-control' placeholder='Confirm Phrase' name='confirm_phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} />
                         {formik.touched.confirm_phrase && <div className='text-danger'>{formik.errors.confirm_phrase}</div>} 
                     </div>
-                    <button type='submit' className='btn theme-bg text-white font-weight-bold btn-block'>Continue...</button>
+                    <button type='submit' className={isLoading ? 'btn theme-bg text-white font-weight-bold btn-block disabled' : 'btn theme-bg text-white font-weight-bold btn-block'} >
+                        {
+                            isLoading
+                            ?
+                            'Please wait...'
+                            :
+                            'Continue...'
+                        }
+                    </button>
                     <p className='py-2 h6 text-center'>Already have an account? <span className='theme-color cursor-pointer' onClick={()=>navigate('/auth/login')} >Sign in</span></p>
                 </form>
             </div>
