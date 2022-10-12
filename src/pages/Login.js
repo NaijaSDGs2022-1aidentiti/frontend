@@ -21,7 +21,13 @@ const Login = () => {
             setIsLoading(true)
             console.log(values)
             axios.post(`${api}auth/login`, values).then(res=>{
+                setIsLoading(false)
                 console.log(res.data)
+                if(res.data.statusCode === 200){
+                    navigate('/dashboard')
+                }else{
+                    setError(res.data.error)
+                }
             }).catch(err=>{
                 setIsLoading(false)
                 console.log(err)
