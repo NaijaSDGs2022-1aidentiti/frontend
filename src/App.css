@@ -2,7 +2,7 @@
   background-color: #0095ff;
 }
 .theme-color {
-  color: #33cccc;
+  color: #0260ff;
 }
 .footer-theme {
   background-color: #eafafa;
@@ -17,30 +17,36 @@
 .fs-8 {
   font-size: 75%;
 }
+.cashflakes-muted {
+  color: #a1aabd;
+}
+.name-text {
+  color: #061237;
+}
 .fs-9 {
   font-size: 85%;
 }
 .dashboard-theme {
-  background-color: #ebedf2;
+  background-color: #F7f9fb;
   min-height: 100vh;
 }
 .bg-cashflakes {
   background-color: #0000b3;
 }
 .border-cashflakes {
-  border-color: #4644C8 !important;
-  color: #4644C8 !important;
+  border-color: #0095ff !important;
+  color: #0095ff !important;
 }
 .btn-cashflakes {
-  background-color: #4644C8;
-  border-color: #4644C8;
+  background-color: #0095ff;
+  border-color: #0095ff;
   color: #fff !important;
 }
 .text-nav-cashflakes{
   color: #2F3958
 }
 .text-cashflakes {
-  color: #4644C8;
+  color: #0095ff;
 }
 .rounded {
   border-radius: 30px !important;
@@ -55,7 +61,7 @@
   bottom: 0;
 }
 .bill-board {
- background-color: #4A4AA5
+ background-color: #0260ff;
 }
 .cursor-pointer {
   cursor: pointer;

@@ -48,7 +48,7 @@ const Register = () => {
                         {formik.touched.confirm_phrase && <div className='text-danger'>{formik.errors.confirm_phrase}</div>} 
                     </div>
                     <button type='submit' className='btn theme-bg text-white font-weight-bold btn-block'>Continue...</button>
-                    <p className='py-2 h6'>Already sign up? <span className='theme-color cursor-pointer' onClick={()=>navigate('/auth/login')} >Sign in</span></p>
+                    <p className='py-2 h6 text-center'>Already have an account? <span className='theme-color cursor-pointer' onClick={()=>navigate('/auth/login')} >Sign in</span></p>
                 </form>
             </div>
         </div>

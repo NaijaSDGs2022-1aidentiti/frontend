@@ -30,13 +30,13 @@ const Dashboard = () => {
                             <span className='nav-link text-dark fs-8 font-weight-bolder'> <i className='fa fa-objects-column'></i> Dashboard</span>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-credit-card'></i> Wallets</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bolder')}> <i className='fa fa-file'></i> Wallets</NavLink>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/activity' className={({isActive})=>( isActive ? 'nav-link text-nav-cashflakes fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-signal'></i> Activity</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/activity' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bolder')}> <i className='fa fa-signal'></i> Activity</NavLink>
                         </li>
                         <li className='nav-item mx-2'>
-                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/help' className={({isActive})=>( isActive ? 'nav-link text-nav-cashflakes fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-nav-cashflakes fs-8 font-weight-bolder')}> <i className='fa fa-phone'></i> Help</NavLink>
+                            <NavLink exact style={{textDecoration: 'none'}} to='/dashboard/help' className={({isActive})=>( isActive ? 'nav-link text-dark fs-8 font-weight-bold border-bottom border-cashflakes' : 'nav-link text-dark fs-8 font-weight-bolder')}> <i className='fa fa-phone'></i> Help</NavLink>
                         </li>
                     </ul>  
                     <button onClick={logout} className='d-block d-md-none btn btn-dark'>Logout</button>                  
@@ -51,7 +51,7 @@ const Dashboard = () => {
             <div className='dashboard-theme'>
                 <div className='px-5'>
                     <div className='d-flex flex-md-row flex-column justify-content-between mx-4'>
-                        <p className='py-3'><span className='text-cashflakes fs-9 font-weight-bolder'>Wallets</span> / <span className='text-muted fs-9 font-weight-bolder'>edit wallet (INV-2020-010)</span></p>
+                        <p className='py-3'><span className='text-cashflakes fs-9 font-weight-bolder'>Wallets</span><span className='cashflakes-muted fs-8'> / edit wallet (INV-2020-010)</span></p>
                         <button className='my-3 btn btn-light text-cashflakes fs-8'>Manage Wallet <i className='fa fa-caret-down'></i></button>
                     </div>
                     <div className='row w-100 mx-0'>
@@ -61,14 +61,14 @@ const Dashboard = () => {
                                     <div className='d-flex'>
                                         <img alt='user_photo' src={require('../assets/images.jpg')} width='50px' height='50px' className='rounded-circle' />
                                         <div className='ml-3'>
-                                            <p className='h6 my-0 fs-8'>Dipa Inhouse</p>
-                                            <p className='text-muted fs-9'>hello@dipainhouse.com</p>
+                                            <p className='h6 my-0 fs-8 name-text'>Dipa Inhouse</p>
+                                            <p className='cashflakes-muted fs-9'>hello@dipainhouse.com</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <p className='text-muted fs-9 my-0'>Ijen Boulevard Street 101</p>
-                                        <p className='text-muted fs-9 my-0'>Malang City, 65115</p>
-                                        <p className='text-muted fs-9'>East Java, Indonesia</p>
+                                        <p className='cashflakes-muted fs-9 my-0'>Ijen Boulevard Street 101</p>
+                                        <p className='cashflakes-muted fs-9 my-0'>Malang City, 65115</p>
+                                        <p className='cashflakes-muted fs-9'>East Java, Indonesia</p>
                                     </div>
                                 </div>
                                 <div className='mx-1 bill-board p-3 rounded'>

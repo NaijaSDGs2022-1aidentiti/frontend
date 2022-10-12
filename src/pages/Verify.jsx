@@ -12,17 +12,9 @@ const Verify = () => {
                     <div className='form-group'>
                         <input className='form-control' placeholder='Enter your BVN' />  
                     </div>
-                    <div className='form-group'>
-                        <input className='form-control' placeholder='Surname' disabled />  
-                    </div>
-                    <div className='form-group'>
-                        <input className='form-control' placeholder='Last Name' required disabled />
-                    </div>
-                    <div className='form-group'>
-                        <input className='form-control' placeholder='Address' required disabled />
-                    </div>
-                    <button className='btn theme-bg text-white font-weight-bold btn-block'>Create your free account</button>
-                    <p className='h6 py-2'>By signing up you agree to our <span className='theme-color'>Privacy & Terms & Privacy Policy.</span> </p>
+                    <button className='btn theme-bg text-white font-weight-bold btn-block my-2'>Verify and Create your account</button>
+                    <p className='pt-2 cashflakes-muted'>By signing up you agree to our <span className='theme-color'>Privacy & Terms & Privacy Policy.</span> </p>
+                    <p className='cashflakes-muted'>When you provide your BVN, it helps cashfkakes protect your financial interest and combat AML with proper KYC</p>
                 </form>
             </div>
         </div>

@@ -29,7 +29,7 @@ const Login = () => {
                         {formik.touched.phrase && <div className='text-danger'>{formik.errors.phrase}</div>}
                     </div>
                     <button type='submit' className='btn theme-bg text-white font-weight-bold btn-block'>SIGN IN</button>
-                    <p className='py-5 h6'>Don't have an account yet? <span className='theme-color cursor-pointer' onClick={()=>navigate('/auth/register')} >Sign up</span></p>
+                    <p className='pb-5 pt-2 text-center h6'>Don't have an account yet? <span className='theme-color cursor-pointer' onClick={()=>navigate('/auth/register')} >Sign up</span></p>
                 </form>
             </div>
         </div>
