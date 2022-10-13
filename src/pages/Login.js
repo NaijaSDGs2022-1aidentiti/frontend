@@ -59,7 +59,7 @@ const Login = () => {
                         {formik.touched.email && <div className='text-danger'>{formik.errors.email}</div>}
                     </div>
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Enter your Phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} name='password' />
+                        <input className='form-control' placeholder='Enter your Password' onChange={formik.handleChange} onBlur={formik.handleBlur} name='password' />
                         {formik.touched.password && <div className='text-danger'>{formik.errors.password}</div>}
                     </div>
                     <button type='submit' className={isLoading ? 'btn theme-bg text-white font-weight-bold btn-block disabled' : 'btn theme-bg text-white font-weight-bold btn-block' }>
