@@ -5,17 +5,23 @@ const Nav = () => {
     const navigate = useNavigate()
     return (
         <div>
-            <nav className='navbar navbar-inverse navbar-expand-sm theme-bg text-white'>
-                <a href='/' className='navbar-brand text-white font-weight-bold text-lowercase h3 animate__animated animate__slideInLeft animate__slow px-md-5 px-1' >
+            <nav className='navbar navbar-inverse navbar-expand-sm bg-white text-dark'>
+                <a href='/' className='navbar-brand text-dark font-weight-bold text-lowercase h3 animate__animated animate__slideInLeft animate__slow px-md-5 px-1 fs-9' >
                  1aidentiti
                 </a>
                 <div className='collapse navbar-collapse justify-content-end animate__animated animate__fadeInRight animate__slower py-2'>
                     <ul className='navbar-nav'>
-                        <li className='nav-item'>
-                            <button className='btn btn-light text-danger font-weight-bold mx-1'>Get Started</button>
+                        <li className='nav-item my-1 mx-2'>
+                            <a href='/' className='nav-link text-dark fs-9'>Services</a>
                         </li>
                         <li className='nav-item my-1 mx-2'>
-                            <button className='btn btn-outline-light mx-1' onClick={()=>navigate('/auth/login')} >Sign in</button>
+                            <a href='/' className='nav-link text-dark fs-9'>Work with us</a>
+                        </li>
+                        <li className='nav-item my-1 mx-2'>
+                            <a href='/' className='nav-link text-dark fs-9'>About</a>
+                        </li>
+                        <li className='nav-item my-1 mx-2'>
+                            <button className='btn theme-bg rounded-pill text-white font-weight-bold mx-1 px-4' onClick={()=>navigate('/auth/login')} >Sign in</button>
                         </li>
                     </ul>
                 </div>
