@@ -2,7 +2,7 @@
   background-color: #0095ff;
 }
 .nav-btn {
-  background: linear-gradient(to left, #0095ff, white);
+  background: linear-gradient(to right, #0095ff, #0260ff);
 }
 .theme-color {
   color: #0260ff;
@@ -12,6 +12,23 @@
 }
 .footer-card {
   background-color: #eafafa;
+}
+.rounded-xl {
+  border-radius: 25px;
+}
+.rounded-md {
+  border-radius: 15px;
+}
+.mini-text {
+  position: absolute;
+  bottom: 100px;
+  z-index: 3;
+}
+.max-text {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  z-index: 3;
 }
 .banner {
   border-bottom-left-radius: 15%;
