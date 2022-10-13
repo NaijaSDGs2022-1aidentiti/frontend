@@ -13,31 +13,31 @@ const Register = () => {
     const formik = useFormik({
         initialValues: {
             email: '',
-            phrase: '',
-            confirm_phrase: ''
+            password: '',
+            confirm_password: ''
         },
         validate: (values)=>{
             let errors = {}
-            if(values.phrase !== values.confirm_phrase) {
-                errors.confirm_phrase = 'Phrase not match'
+            if(values.password !== values.confirm_password) {
+                errors.confirm_password = 'Phrase not match'
             }
             return errors
         },
         validationSchema: Yup.object({
             email: Yup.string().required('This field is required').email('Enter a valid E-mail'),
-            phrase: Yup.string().required('Phrase is required').matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Phrase must be alphanumeric'),
-            confirm_phrase: Yup.string().required('Confirm your Phrase')
+            password: Yup.string().required('Phrase is required').matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Phrase must be alphanumeric'),
+            confirm_password: Yup.string().required('Confirm your Phrase')
         }),
         onSubmit: (values)=>{
             setIsLoading(true)
             axios.post(`${api}auth/register`, values).then((res)=>{
                 console.log(res.data)
-                if(res.data[0]){
-                    sessionStorage.setItem('validating', JSON.stringify({id: res.data[1]._id, otp: res.data[1].otp}))
+                if(res.data.statusCode === 200){
+                    sessionStorage.setItem('validating', JSON.stringify({id: res.data.message._id, otp: res.data.message.otp}))
                     navigate('/auth/otp')
                 }else{
                     setIsLoading(false)
-                    setError(res.data[1])
+                    setError(res.data.message)
                 }
             }).catch((err)=>{
                 console.log(err)
@@ -66,12 +66,12 @@ const Register = () => {
                         {formik.touched.email && <div className='text-danger'>{formik.errors.email}</div>} 
                     </div>
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Phrase' name='phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} /> 
-                        {formik.touched.phrase && <div className='text-danger'>{formik.errors.phrase}</div>}  
+                        <input className='form-control' placeholder='Phrase' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} /> 
+                        {formik.touched.password && <div className='text-danger'>{formik.errors.password}</div>}  
                     </div>
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Confirm Phrase' name='confirm_phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        {formik.touched.confirm_phrase && <div className='text-danger'>{formik.errors.confirm_phrase}</div>} 
+                        <input className='form-control' placeholder='Confirm Phrase' name='confirm_password' onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                        {formik.touched.confirm_password && <div className='text-danger'>{formik.errors.confirm_password}</div>} 
                     </div>
                     <button type='submit' className={isLoading ? 'btn theme-bg text-white font-weight-bold btn-block disabled' : 'btn theme-bg text-white font-weight-bold btn-block'} >
                         {

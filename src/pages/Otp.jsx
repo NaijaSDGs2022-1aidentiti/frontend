@@ -34,8 +34,6 @@ const Otp = () => {
                 setIsLoading(false)
                 console.log(res.data)
                 if(res.data.statusCode === 200){
-                    sessionStorage.removeItem('validating')
-                    alert('Account Verified')
                     navigate('/auth/verify-reg')
                 }else{
                     setError(res.data.error)
