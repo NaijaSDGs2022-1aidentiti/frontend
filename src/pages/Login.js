@@ -12,10 +12,12 @@ const Login = () => {
     const [error, setError] = useState('')
     const formik = useFormik({
         initialValues: {
-            phrase: ''
+            email: '',
+            password: ''
         },
         validationSchema: Yup.object({
-            phrase: Yup.string().required('Enter your phrase')
+            email: Yup.string().required('Email is required').email('Invalid email address'),
+            password: Yup.string().required('Enter your password')
         }),
         onSubmit: (values)=>{
             setIsLoading(true)
@@ -53,8 +55,12 @@ const Login = () => {
                         ''
                     }
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Enter your Phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} name='phrase' />
-                        {formik.touched.phrase && <div className='text-danger'>{formik.errors.phrase}</div>}
+                        <input className='form-control' placeholder='Enter your E-mail' onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' />
+                        {formik.touched.email && <div className='text-danger'>{formik.errors.email}</div>}
+                    </div>
+                    <div className='form-group'>
+                        <input className='form-control' placeholder='Enter your Phrase' onChange={formik.handleChange} onBlur={formik.handleBlur} name='password' />
+                        {formik.touched.password && <div className='text-danger'>{formik.errors.password}</div>}
                     </div>
                     <button type='submit' className={isLoading ? 'btn theme-bg text-white font-weight-bold btn-block disabled' : 'btn theme-bg text-white font-weight-bold btn-block' }>
                         {
