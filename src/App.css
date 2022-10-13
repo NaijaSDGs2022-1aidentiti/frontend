@@ -1,6 +1,9 @@
 .theme-bg {
   background-color: #0095ff;
 }
+.nav-btn {
+  background: linear-gradient(to left, #0095ff, white);
+}
 .theme-color {
   color: #0260ff;
 }
