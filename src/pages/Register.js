@@ -19,14 +19,14 @@ const Register = () => {
         validate: (values)=>{
             let errors = {}
             if(values.password !== values.confirm_password) {
-                errors.confirm_password = 'Phrase not match'
+                errors.confirm_password = 'Password not match'
             }
             return errors
         },
         validationSchema: Yup.object({
             email: Yup.string().required('This field is required').email('Enter a valid E-mail'),
-            password: Yup.string().required('Phrase is required').matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Phrase must be alphanumeric'),
-            confirm_password: Yup.string().required('Confirm your Phrase')
+            password: Yup.string().required('Password is required').matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Password must be alphanumeric'),
+            confirm_password: Yup.string().required('Confirm your Password')
         }),
         onSubmit: (values)=>{
             setIsLoading(true)
@@ -66,11 +66,11 @@ const Register = () => {
                         {formik.touched.email && <div className='text-danger'>{formik.errors.email}</div>} 
                     </div>
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Phrase' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} /> 
+                        <input className='form-control' placeholder='Password' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} /> 
                         {formik.touched.password && <div className='text-danger'>{formik.errors.password}</div>}  
                     </div>
                     <div className='form-group'>
-                        <input className='form-control' placeholder='Confirm Phrase' name='confirm_password' onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                        <input className='form-control' placeholder='Confirm Password' name='confirm_password' onChange={formik.handleChange} onBlur={formik.handleBlur} />
                         {formik.touched.confirm_password && <div className='text-danger'>{formik.errors.confirm_password}</div>} 
                     </div>
                     <button type='submit' className={isLoading ? 'btn theme-bg text-white font-weight-bold btn-block disabled' : 'btn theme-bg text-white font-weight-bold btn-block'} >
