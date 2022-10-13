@@ -49,7 +49,7 @@ const Dashboard = () => {
                 </span>
             </nav>
             <div className='dashboard-theme'>
-                <div className='px-5'>
+                <div className='px-md-5 px-0'>
                     <div className='d-flex flex-md-row flex-column justify-content-between mx-4'>
                         <p className='py-3'><span className='text-cashflakes fs-9 font-weight-bolder'>Wallets</span><span className='cashflakes-muted fs-8'> / edit wallet (INV-2020-010)</span></p>
                         <button className='my-3 btn btn-light text-cashflakes fs-8'>Manage Wallet <i className='fa fa-caret-down'></i></button>
